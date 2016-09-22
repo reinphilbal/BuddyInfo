@@ -28,6 +28,16 @@ public class AddressBook
 		}
 	}
 	
+	private void printAddressBook() 
+	{
+		Iterator<BuddyInfo> buds = buddyList.iterator();
+		while (buds.hasNext()) {
+			BuddyInfo buddy = buds.next();
+			System.out.println(buddy.getName() + " lives at " + buddy.getAddress() + 
+					" number is " + buddy.getPhoneNumber());
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 		AddressBook addressBook = new AddressBook();
@@ -37,7 +47,8 @@ public class AddressBook
 		addressBook.addBuddy(Pat);
 		addressBook.addBuddy(Liz);
 		addressBook.addBuddy(enemy);
+		addressBook.printAddressBook();
 		addressBook.removeBuddy("Red John");
-		System.out.println("Hello World!");
+		addressBook.printAddressBook();
 	}
 }
