@@ -38,5 +38,6 @@ public class AddressBook
 		addressBook.addBuddy(Liz);
 		addressBook.addBuddy(enemy);
 		addressBook.removeBuddy("Red John");
+		System.out.println("Hello World!");
 	}
 }
