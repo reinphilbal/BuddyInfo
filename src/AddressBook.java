@@ -33,8 +33,10 @@ public class AddressBook
 		AddressBook addressBook = new AddressBook();
 		BuddyInfo Liz = new BuddyInfo("Liz", "419 Ojoro Way", "062-987-6543)");
 		BuddyInfo Pat = new BuddyInfo("Pat", "123 Def Street", "613-987-6543)");
+		BuddyInfo enemy = new BuddyInfo("Red John", "unknown", "000-000-0000");
 		addressBook.addBuddy(Pat);
 		addressBook.addBuddy(Liz);
-		addressBook.removeBuddy("Liz");
+		addressBook.addBuddy(enemy);
+		addressBook.removeBuddy("Red John");
 	}
 }
