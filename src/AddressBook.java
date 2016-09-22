@@ -4,30 +4,24 @@ import java.util.Iterator;
 
 public class AddressBook 
 {
-	private ArrayList<BuddyInfo> buddyList = new ArrayList<BuddyInfo>();
+	private ArrayList<BuddyInfo> buddyList;
 	
 	
 	public AddressBook() 
 	{
-		//do nothing
+		buddyList = new ArrayList<BuddyInfo>();
 	}
 	
-	private void addBuddy(String name, String address, String phoneNumber) 
+	private void addBuddy(BuddyInfo buddy) 
 	{
-		BuddyInfo buddy = new BuddyInfo();
-		buddy.setName(name);
-		buddy.setAddress(address);
-		buddy.setPhoneNumber(phoneNumber);
 		buddyList.add(buddy);
 	}
 	
 	private void removeBuddy(String name) 
 	{
 		Iterator<BuddyInfo> buds = buddyList.iterator();
-		BuddyInfo buddy = new BuddyInfo();
 		while (buds.hasNext()) {
-			buddy = buds.next();
-			if (buddy.getName().equals(name)) {
+			if (buds.next().getName().equals(name)) {
 				buds.remove();
 				return;
 			}
@@ -37,8 +31,10 @@ public class AddressBook
 	public static void main(String[] args)
 	{
 		AddressBook addressBook = new AddressBook();
-		addressBook.addBuddy("Pat", "123 Def Street", "613-987-6543)");
-		addressBook.addBuddy("Liz", "419 Ojoro Way", "062-987-6543)");
+		BuddyInfo Liz = new BuddyInfo("Liz", "419 Ojoro Way", "062-987-6543)");
+		BuddyInfo Pat = new BuddyInfo("Pat", "123 Def Street", "613-987-6543)");
+		addressBook.addBuddy(Pat);
+		addressBook.addBuddy(Liz);
 		addressBook.removeBuddy("Liz");
 	}
 }
